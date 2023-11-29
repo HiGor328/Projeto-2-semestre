@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="A.png" type="image/x-icon">
+    <title>Antenados</title>
+    <link rel="stylesheet" href="index.css"> 
+    <style>
+        
+        header {
+            background-color: black; 
+            position: absolute;                      /* É A POSIÇÃO do cabeçalho acima da imagem de fundo */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;                     /* É ondeDefine uma ordem de sobreposição para o cabeçalho */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px;
+        }
+        
+
+        .logo img {
+            width: 200px;
+            height: auto;
+            
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-family:'Times New Roman', Times, serif;         /* Altera a fonte desejada ANTENADOS*/
+            font-size: 30px;                                    /* Altera o tamanho da fonte desejado */
+        }
+
+        /* barra de pesquisa */
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        #search-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px; /* Tornar o campo de pesquisa arredondado  ou outra forma*/
+            margin-right: 10px;
+            transition: border-color 0.3s ease; /* Adicionar transição para a cor da efeito borda */
+        }
+
+        #search-input:focus {
+            border-color: #007BFF; /* Mudar a cor da borda quando o campo estiver em foco */
+        }
+
+        /* Estilos para o conteúdo principal */
+        main {
+            position: relative;
+            height: calc(100vh - 60px); /* DefinE a altura como 100% da altura da tela (viewport)*/
+        }
+
+        .background-image {
+            background-image: url('fundo02.jpg'); /* 'fundo02.jpg' pelo nome do seu arquivo de imagem */
+            background-size: cover; /* A imagem de fundo cobrirá todo o elemento */
+            background-repeat: no-repeat; /* Evita a repetição da imagem */
+            width: 100%;
+            height: 100%; /* Defina a altura como 100% para cobrir todo o conteúdo principal */
+            position: relative; /* Permite que outros elementos se sobreponham a essa imagem */
+            transform: scaleX(-1); /* Inverte horizontalmente a imagem de fundo */
+        }
+
+        /* Estilos para os botões com animação de comprimento de borda */
+        .botao-container {
+            position: absolute;
+            top: 60%;
+            left: 10px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .botao {
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            font-size: 17px;
+            color: rgb(57, 209, 247); /* COR DA FONTE */
+            background-color: rgb(0, 0, 0);
+            width: 260px; /* LARGURA DOS BOTOES */
+            height: 50px; /* ALTURA DOS BOTOES */
+            position: relative;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 18px; /* ARREDONDAR BOTAO */
+            margin-bottom: 35px; /* Espaço vertical entre os botões */
+            text-decoration: none; /* Remover sublinhagem */
+            box-shadow: 0px 5px 10px rgba(250, 248, 248, 0.5); /* Sombra mais visível */
+        }
+
+        .botao:before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 0;
+            height: 0;
+            border-top: 2px solid hwb(70 96% 2%); /* Espessura da borda CIMA do efeito do botão */
+            border-right: 2px solid rgba(253, 253, 250, 0.938); /* Espessura da borda cima do efeito do botão */
+            animation: border-top-right 3s infinite alternate;
+        }
+
+        .botao::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            width: 0;
+            height: 0;
+            border-bottom: 2px solid hwb(60 99% 0%); /* Espessura da borda BAIXO do efeito do botão */
+            border-left: 2px solid rgba(253, 253, 250, 0.938); /* Espessura da borda BAIXO do efeito do botão */
+            animation: border-bottom-left 3s infinite alternate;
+        }
+
+        @keyframes border-top-right {
+            0% { width: 0; height: 0; }
+            50% { width: 200px; height: 0px; }
+            100% { width: 200px; height: 48px; }
+        }
+
+        @keyframes border-bottom-left {
+            0% { width: 0; height: 0; }
+            50% { width: 200px; height: 0px; }
+            100% { width: 200px; height: 48px; }
+        }
+    </style>
+</head>
+<body>
+                                              <!-- AQUI FICA Cabeçalho do Site-->
+    <header>
+        <div class="logo">
+            <img src="Logo antenados.png" alt="Logo do Site">
+        </div>
+        <nav>
+            <ul>
+               <!---- <li><a href="#">ANTENADOS</a></li>
+            </ul>
+        </nav>
+                                            <!-- AQUI FICA Barra de Pesquisa -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquisar...">
+            <button id="search-button">Pesquisar</button>
+        </div>
+    </header>
+
+                                                    <!-- Conteúdo Principal -->
+    <main>
+                                                    <!-- Imagem de Fundo -->
+    <div class="background-image"></div>
+                                                    <!-- Botões -->
+<div class="botao-container">
+    <a href="i.a.html" class="botao" target="_blank">I.A</a>
+    <a href="url_para_Front_End" class="botao" target="_blank">Front End</a>
+    <a href="url_para_Back_End" class="botao" target="_blank">Back End</a>
+    <a href="url_para_IOT" class="botao"target="_blank">I O T</a>
+    <a href="url_para_Redes" class="botao"target="url_para_Redes">Redes</a>
+    <a href="url_para_Machine_Learning" class="botao" target="_blank">Machine Learning</a>
+</div>
+
+    </main>
+    
+
+                 <!-- espaço para mensagens em=ntre imagem de fundo e rodape. -->
+        
+        <div class="faq" style="text-align: right;"> <!--neste style muda posicao do link criador ex: da esquerda p/ direita-->
+
+            Criador da imagem de fundo &#x1F913;<br> 
+            <a href="https://br.freepik.com/fotos-gratis/tecnologia-futurista-de-fundo-azul-de-circuito-digital-de-circulo_17122185.htm#query=fundo%20tecnologia&position=14&from_view=keyword&track=ais">
+                Imagem de rawpixel.com 
+            </a>       
+        <!-- aqui estao informacoes criador imagem de fundo -->
+    </div>
+    
+</body>
+</html>
